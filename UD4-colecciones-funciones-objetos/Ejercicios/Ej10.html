@@ -13,57 +13,29 @@
             //Array indicando 5 posiciones
             let sueldos = new Array(5);
 
-            function cargar(arraySueldos) {
-                for (let i = 0; i < arraySueldos.length; i++) {
-                    let entrada;
-                    let numero;
-
-                    do {
-                        entrada = prompt("Introduce el sueldo (entero) del operario " + (i + 1) + " de " + arraySueldos + ": ");
-
-                        if (entrada === null) {
-                            alert("Debes introducir un numero entero. Si no quieres continuar, cierra la pagina.");
-                            continue;
-                        }
-
-                        // Pasar a entero 
-                        numero = parseInt(entrada, 10);
-
-                        if (isNaN(numero)) {
-                            alert("Entrada no valida. Introduce un numero entero. ");
-                        }
-
-                    } while (isNaN(NaN)); // Repita hasta tener entero
-
-                    arraySueldos[i] = numero;
+            function cargar(sueldos) {
+                for (let i = 0; i < sueldos.length; i++) {
+                    let entrada = prompt("Introduce el sueldo del operario " + (i + 1) + ":");
+                    sueldos[i] = parseInt(entrada);
                 }
             }
 
-            function calcularGastos(arraySueldos) {
+            // Función que calcula el total de gastos
+            function calcularGastos(sueldos) {
                 let total = 0;
-
-                document.write("<h3>Detalle de sueldos</h3>");
-                document.write("<ul>");
-
-                for (let i = 0; i < arraySueldos.length; i++) {
-                    let sueldo = arraySueldos[i];
-                    document.write("<li>Operario " + (i + 1) + ": " + sueldo + " €</li>");
-                    total += sueldo;
+                console.log("Detalle de sueldos:");
+                for (let i = 0; i < sueldos.length; i++) {
+                    console.log("Operario " + (i + 1) + ": " + sueldos[i] + " €");
+                    total += sueldos[i];
                 }
-
-                document.write("</ul>");
-                document.write("<p><strong>Total gastos en sueldos: " + total + " €</strong></p>");
-
-                // También lo mostramos en consola
-                console.log("Sueldos:", arraySueldos);
-                console.log("Total gastos en sueldos:", total);
-
+                
                 return total;
             }
 
-            // --- Uso del programa ---
-            cargar(sueldos);                 // rellena el array con 5 sueldos
-            calcularGastos(sueldos);         // muestra cada sueldo y el total en la página
+            cargar(sueldos);
+
+            let total = calcularGastos(sueldos);
+            console.log("Total gastos en sueldos: " + total + " €");
         </script>
     </main>
 </body>
