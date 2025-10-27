@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <main>
+        <script>
+
+            function mostrarLista(lista) {
+
+                console.log("Numero elementos del array: " + lista.length);
+            
+                console.log("Valores de la lista:");
+                for (const element of lista) {
+                    console.log(element);
+                }
+            }
+            
+            let lista = ['Dragonborn', 'Skyrim', 'Dovahkiin', 'Dragon', 'Fire', 'Game'];
+            mostrarLista(lista);
+
+            let elementoEntrada = prompt("Ingresa una cadena: ");
+            lista.push(elementoEntrada);
+
+            mostrarLista(lista);
+
+        </script>
+    </main>
+</body>
+
+</html>
