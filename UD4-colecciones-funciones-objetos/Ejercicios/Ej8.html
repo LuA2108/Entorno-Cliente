@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+
+<body>
+    <main>
+        <script>
+            let cadena = prompt("Ingrese una cadena con el siguiente formato (“nombre:apellido:telefono:email:codigopostal”):");
+
+            if (cadena && cadena.includes(':')) {
+                let lista = cadena.split(":");
+
+                if (lista.length !== 5) {
+                    console.log("La cadena no tiene los campos requeridos.");
+                } else {
+
+                    let email = "";
+
+                    for (let valor of lista) {
+                        if (valor.includes("@")) {
+                            email = valor;
+                            break;
+                        }
+                    }
+
+                    if (email) {
+                        let servidor = email.split("@")[1]; // obtener solo la parte del servidor
+                        let apellidos = lista[1];            // apellidos según formato
+                        let codigopostal = lista[4];         // código postal según formato
+
+                        // Mostrar la información requerida
+                        console.log("Código postal:", codigopostal);
+                        console.log("Apellidos:", apellidos);
+                        console.log("Email:", email);
+                        console.log("Servidor del email:", servidor);
+                    } else {
+                        console.log("El email no tiene formato valido.");
+                    }
+
+                }
+            } else {
+                console.log("Entrada no valida.");
+            }
+        </script>
+    </main>
+</body>
+
+</html>
