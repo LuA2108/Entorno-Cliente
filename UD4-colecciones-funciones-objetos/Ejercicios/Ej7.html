@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <main>
+        <script>
+            //Creacion de la lista
+            let lista = ['Dragonborn', 'Skyrim', 'Dovahkiin', 'Dragon', 'Fire', 'Game'];
+
+            console.log("Longitud de la lista: " + lista.length);
+            console.log("Lista: "+ lista.toString());
+
+            let separador = prompt("Ingrese un caracter separador: ");
+            
+            let listaStr = lista.join(separador);
+            console.log(listaStr);
+
+            console.log("Número de elementos tras join: ", lista.length);
+            console.log("Contenido del array tras join: ", lista.toString());
+
+        </script>
+    </main>
+</html>
