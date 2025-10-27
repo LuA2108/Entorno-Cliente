@@ -11,18 +11,25 @@
     <main>
         <script>
 
+            /*
+             * Funcion que muestra los valores de la lista y su cantidad
+             */
             function mostrarLista(lista) {
 
+                // Imprime por consola el numero de elemntos
                 console.log("Numero elementos del array: " + lista.length);
-            
+                
+                // Muestra los valores de la lista
                 console.log("Valores de la lista:");
                 for (const element of lista) {
                     console.log(element);
                 }
             }
             
+            //Creacion de la lista
             let lista = ['Dragonborn', 'Skyrim', 'Dovahkiin', 'Dragon', 'Fire', 'Game'];
-            mostrarLista(lista);
+            // Muestra los elementos que hay y su cantidad
+            mostrarLista(lista);  
 
             let elementoEntrada = prompt("Ingresa una cadena: ");
             lista.push(elementoEntrada);
