@@ -10,7 +10,50 @@
 <body>
     <main>
         <script>
+            /**
+             * Funcion que muestra los elementos de un array
+             */ 
+            function mostrar(array) {
+                for (let elemento of array) {
+                    console.log(elemento);
+                }
+            }
+            /*
+             * Funcion que busca la coincidencia de un valor del array con la entrada
+             * ingresada por parametro.
+             */
+            function buscarItem(array, entrada) {
+
+                // Recorre el array
+                for (let i in array) {
+                    // Se compara si son iguales, uso de toLowerCase para no ser sensible a maryusculas
+                    if(array[i].toLowerCase() == entrada.toLowerCase()) {
+                        return i; // Devuelve la posicion al encontrar coincidencia
+                    } 
+                }
+                return -1; // Si no encontro coincidencia, devuelve -1
+            }
+
+            //Creacion de una lista de nombre
+            let listaNombres = new Array('Juan', 'Pedro', 'Luis', 'María', 'Julia');
             
+            // Se llama a la funcion mostrar()
+            mostrar(listaNombres);
+
+            // Se solicita un nombre al usuario
+            let nombreEntrada = prompt("Ingrese un nombre: ");
+
+            // Se llama a la funcion y se guarda la posicion devuelta
+            let posicion = buscarItem(listaNombres, nombreEntrada);
+
+            // Se comprueba si existe el valor ingresado en el array
+            if( posicion != -1) {
+                console.log("El nombre ingresado esta en la posicion: "+ posicion + " del array.");
+            } else {
+                console.log("El nombre ingresado no existe en el array. ");
+            }
+
+
         </script>
     </main>
 
