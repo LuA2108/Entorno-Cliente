@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <main>
+        <script>
+            /*
+             * Funcion que muestra los valores de la lista y su cantidad
+            */
+            function mostrarLista(lista) {
+
+                // Imprime por consola el numero de elemntos
+                console.log("Numero elementos del array: " + lista.length);
+
+                // Muestra los valores de la lista junto a su posicion
+                console.log("Valores de la lista:");
+                for (let i in lista) {
+                    console.log(i + ": " + lista[i]);
+                }
+            }
+
+            //Creacion de la lista
+            let lista = ['Dragonborn', 'Skyrim', 'Dovahkiin', 'Dragon', 'Fire', 'Game'];
+            // Muestra el valor del elementos, su posicion y la cantidad
+            mostrarLista(lista);
+
+            let nuevoPrimerIndice = parseInt(prompt("Indique el indice de la lista anterior: "));
+            let nuevoUltimoIndice = parseInt(prompt("Indique un indice de la lista anterior: "));
+
+            let listaNueva = Array();
+
+            // Validación básica de índices
+            if (isNaN(nuevoPrimerIndice) || isNaN(nuevoUltimoIndice) ||
+                nuevoPrimerIndice < 0 || nuevoUltimoIndice >= lista.length ||
+                nuevoPrimerIndice > nuevoUltimoIndice) {
+                console.log("Índices inválidos.");
+            } else {
+            // Se copia los valores desde el primer indice hasta el ultimo
+            listaNueva = lista.slice(nuevoPrimerIndice, nuevoUltimoIndice+1);
+            
+        }
+        
+        console.log("--- Creacion Nueva Lista ---");
+        console.log("Nueva lista: " + listaNueva.toString());
+
+
+        </script>
+    </main>
+</body>
+
+</html>
