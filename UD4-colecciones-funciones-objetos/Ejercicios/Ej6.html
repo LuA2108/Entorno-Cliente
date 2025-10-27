@@ -41,13 +41,13 @@
                 nuevoPrimerIndice > nuevoUltimoIndice) {
                 console.log("Índices inválidos.");
             } else {
-            // Se copia los valores desde el primer indice hasta el ultimo
-            listaNueva = lista.slice(nuevoPrimerIndice, nuevoUltimoIndice+1);
-            
-        }
-        
-        console.log("--- Creacion Nueva Lista ---");
-        console.log("Nueva lista: " + listaNueva.toString());
+                // Se copia los valores desde el primer indice hasta el ultimo
+                listaNueva = lista.slice(nuevoPrimerIndice - 1, nuevoUltimoIndice + 1);
+                console.log("--- Creacion Nueva Lista ---");
+                console.log("Nueva lista: " + listaNueva.toString());
+            }
+
+
 
 
         </script>
