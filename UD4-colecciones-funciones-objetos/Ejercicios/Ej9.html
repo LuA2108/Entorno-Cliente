@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+
+<body>
+    <main>
+        <script>
+            function pideYComprueba() {
+                let listaNum = new Array();
+                let cadena = "";
+
+                do {
+                    cadena = prompt("Ingrese un numero ('x' -> fin): ");
+
+                    if (!isNaN(cadena) && cadena !== "") {
+                        let numero = parseInt(cadena);
+
+
+                        listaNum.push(numero);
+                    } else {
+                        console.log("Numero no valido.");
+                    }
+
+                } while (cadena !== "x" );
+
+                return listaNum;
+            }
+
+            function mitad(array) {
+                for (let i in array) {
+                    array[i] = array[i] / 2;
+                }
+                return array;
+            }
+
+            function porlaMitad(array) {
+                let arrayCopia = array.slice();
+
+                for (let i in arrayCopia) {
+                    arrayCopia[i] = arrayCopia[i] / 2;
+                }
+
+                return arrayCopia;
+            }
+
+            // Ejemplo de uso
+            let numeros = pideYComprueba();
+            console.log("Array original:", numeros.toString());
+
+            mitad(numeros);
+            console.log("Array modificado con mitad():", numeros.toString());
+
+            let nuevaMitad = porlaMitad(numeros);
+            console.log("Nuevo array con porlaMitad():", nuevaMitad.toString());
+            console.log("Array original después de porlaMitad():", numeros.toString());
+        </script>
+    </main>
+</body>
+
+</html>
