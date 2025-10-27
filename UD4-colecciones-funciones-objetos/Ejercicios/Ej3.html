@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <main>
+        <script>
+
+            /*
+             * Funcion que muestra los valores de la lista y su cantidad
+            */
+            function mostrarLista(lista) {
+
+                // Imprime por consola el numero de elemntos
+                console.log("Numero elementos del array: " + lista.length);
+                
+                // Muestra los valores de la lista
+                console.log("Valores de la lista:");
+                for (const element of lista) {
+                    console.log(element);
+                }
+            }
+            
+            //Creacion de la lista
+            let lista = ['Dragonborn', 'Skyrim', 'Dovahkiin', 'Dragon', 'Fire', 'Game'];
+            // Muestra los elementos que hay y su cantidad
+            mostrarLista(lista);        
+            
+            // Los inserta al inicio del array, desplazando los demas a la derecha
+            lista.unshift('Videojuego', 'Dragones');
+            // Se vuelve a mostrar la info de la lista
+            mostrarLista(lista);
+
+            // Se oslicita la entrada de una cadena y se agrega a la lista
+            let entrada = prompt("Ingresa una cadena: ");
+            lista.unshift(entrada);
+
+            // Se vuelve a mostrar la info de la lista
+            mostrarLista(lista);
+
+        </script>
+    </main>
+</body>
+</html>
