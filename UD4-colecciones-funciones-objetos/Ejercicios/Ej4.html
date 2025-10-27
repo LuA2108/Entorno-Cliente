@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <main>
+        <script>
+            /*
+             * Funcion que muestra los valores de la lista y su cantidad
+            */
+            function mostrarLista(lista) {
+
+                // Imprime por consola el numero de elemntos
+                console.log("Numero elementos del array: " + lista.length);
+                
+                // Muestra los valores de la lista
+                console.log("Valores de la lista:");
+                for (const element of lista) {
+                    console.log(element);
+                }
+            }
+            
+            //Creacion de la lista
+            let lista = ['Dragonborn', 'Skyrim', 'Dovahkiin', 'Dragon', 'Fire', 'Game'];
+            // Muestra los elementos que hay y su cantidad
+            mostrarLista(lista);  
+
+            // Elimina el ultimo elemento de la lista y se guarda en una variable
+            let elementoDel = lista.pop();
+
+            // Muestra la lista actual
+            mostrarLista(lista);
+
+            // Se muestra por consola el elemento eliminado
+            console.log("Elemento eliminado: " + elementoDel);
+        </script>
+    </main>
+</body>
+</html>
