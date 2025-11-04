@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <!-- Objetivo: crear funciones que ordenen el array segun el tipo de orden a declarar -->
+    <script>
+
+        //Array de numeros desordenados
+        const array = [ 95, 95, 14, 83, 58,
+                    33, 65, 52, 7, 72,13, 46, 19, 31, 27,
+                    36, 30, 86, 88, 88, 68, 16, 5, 14, 41, 
+                    56, 89, 11, 6, 29, 72, 11, 69, 36, 16,
+                    11, 82, 84, 32, 84, 95, 98, 76, 99, 100,
+                    12, 89, 1, 92, 27, 66, 48, 38, 49, 30, 
+                    40, 87, 19, 31, 37, 5, 32, 9, 33, 98, 94, 
+                    5, 15, 4, 88, 47, 34, 83, 8, 31, 4, 
+                    2, 72, 31, 39, 15, 10, 46, 78, 11, 21, 
+                    92, 22, 83, 3, 6, 71, 39, 54, 50, 77, 
+                    13, 85, 7, 36 ]; 
+
+        /**
+         * Funcion que ordena los elementos del array de mayor a menor
+         * */
+        function ordenarArray(array) {
+            //Crea una copia del array
+            let copia = array.slice();
+
+            // Recorre el array
+            for (let i = 0; i < copia.length -1; i++) {
+                // Recorre el array una posicion adelantado
+                for (let j = i+1; j < copia.length - 1; j++) {
+                    // Se comprueba si la segunda posicion es mamyor que la primera del array
+                    if(copia[j] > copia[i]){
+                        let aux = copia[i]; // Guarda el valor 
+                        copia[i] = copia[j]; // La primera posicion cambia al segundo
+                        copia[j] = aux; // La segunda posicion cambia por el primer valor
+                    }
+                    
+                }
+
+            }
+            return copia;
+        }
+        
+
+
+        array_ordenado = ordenarArray(array);
+
+        console.log(array_ordenado.join(" "));
+    </script>
+</body>
+</html>
