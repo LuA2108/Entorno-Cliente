@@ -9,10 +9,55 @@
     </head>
     <body>
         <script>
-            //Array con los dias de la semana
-            let $dias_semanas = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+            /*Variables para almacenar datos del array*/
+            let dias_m = [];        // Guarda los dias que empiecen con m
+            let primer_dia_m = "";  // Guarda el primer dia con m del array
+            let pos_primer_m = 0;   // Posicion del primer dia del array con m
+            let hay_dia_s = 0;      // Indica si hay algun dia con s
+            let dias_s = 0;         // Indica si todos los dias acaban con s
+            let dias_mayus = [];    // Guarda los dias en mayusculas
+            let es_martes = 0;      // Indica si algun dia es martes
 
-            
+            //Array con los dias de la semana
+            let dias_semanas = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+
+            /*Recorre los dias*/
+            for (let i = 0; i < dias_semanas.length; i++) {
+                
+                // Compara los dias que empiecen con "m" 
+                if(dias_semanas[i].startsWith("m")  ) {
+                    /*Guarda los dias en el array*/
+                    dias_m.push(dias_semanas[i]);
+
+                    //Solo permite guardar una sola vez cuando se encuentra un dia con m, siendo el primero y unico
+                    if(primer_dia_m === "") {
+                        primer_dia_m = dias_semanas[i]; // Guarda el primer dia con m
+                        pos_primer_m = i; //Guarda la posicion
+                    }
+                }
+                
+                // Comprueba si hay 's' en algun dia de la semana, si es asi, devuelve true
+                if(dias_semanas[i].includes("s")) {
+                    hay_dia_s = true;
+                }
+
+                // Comprueba si di
+                if(!dias_semanas[i].includes("s", dias_semanas[i].length-1)) {
+
+                }
+
+                /*Guardar todos los dias en mayuscula*/
+                dias_mayus.push(dias_semanas[i].toUpperCase());
+
+
+            }
+
+            // Imprime los dias que empiecen con m
+            console.log("Dias que empiezan con 'm': "+ dias_m.join(" "));
+            console.log("Primer dia de la semana con 'm': "+ primer_dia_m);
+            console.log("Posicion del primer dia con m: "+ pos_primer_m);
+            console.log("Los dias en mayusculas: "+ dias_mayus.join(" "))
+
 
         </script>
     </body>
