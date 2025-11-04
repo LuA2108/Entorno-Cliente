@@ -20,22 +20,34 @@
                         { name: "Ayoze", age: 18 }
         ];  
 
+        // Guarda la edad introducida por el usuario
         let edad_entrada = parseInt(prompt("Para buscar una persona, ingrese una edad: "));
-        let suma_edades = 0;
-        
+
+        // Guardara la posicion de la persona encontrada
+        let posicion = -1;
+
         // Recorre el array de objetos
-        console.log("Persona: ");
         for (let i in personas) {
             // Compara la edad de la persona con la edad introducida por el usuario 
             if(personas[i].age === edad_entrada) {
-                // Imprime los datos de esa persona
-                console.log("Nombre: " + personas[i].name + " - Edad: " + personas[i].age);
+                // como se encuentra se guarda la posicion de la persona encontrada
+                posicion = i;
                 // Termina el recorrido.
                 break;
             }
         }
         
+        let suma_edades = 0;
 
+        for (let i in personas) {
+            suma_edades += personas[i].age;
+        }
+
+        let persona_encontrada = (posicion !== -1) ? "La primera persona de acuerdo a la edad ingresada es: " + "Nombre: " + 
+                                personas[posicion].name + " - Edad: " + personas[posicion].age: "No hay ninguna persona encontrada segun la edad ingresada.";
+
+        console.log(persona_encontrada);
+        console.log("La media de todas las personas: "+ (suma_edades/personas.length));
     </script>
 </body>
 
