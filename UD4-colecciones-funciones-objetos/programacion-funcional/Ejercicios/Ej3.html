@@ -20,7 +20,20 @@
                         { name: "Ayoze", age: 18 }
         ];  
 
+        let edad_entrada = parseInt(prompt("Para buscar una persona, ingrese una edad: "));
+        let suma_edades = 0;
         
+        // Recorre el array de objetos
+        console.log("Persona: ");
+        for (let i in personas) {
+            // Compara la edad de la persona con la edad introducida por el usuario 
+            if(personas[i].age === edad_entrada) {
+                // Imprime los datos de esa persona
+                console.log("Nombre: " + personas[i].name + " - Edad: " + personas[i].age);
+                // Termina el recorrido.
+                break;
+            }
+        }
         
 
     </script>
