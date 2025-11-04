@@ -19,6 +19,17 @@
         { nombre: 'Callosa', poblacion: 1526006 }
         ]; 
 
+        // Se solicita al usuario un numero de habitantes para filtrar las ciudades
+        let valor_min = parseInt(prompt("Introduce un número de habitantes para filtrar las ciudades: "))
+
+        // Recorre las ciudades
+        for (let i in ciudades) {
+            // Ahora se filtra las ciudades que son mayoresa al valor minimo introducido por el usuario
+            if(ciudades[i].poblacion > valor_min) {
+                //Imprime los datos de las ciudades y poblacion mayores al valor min
+                console.log("Ciudad: "+ciudades[i].nombre + " - Poblacion: "+ciudades[i].poblacion )
+            }
+        }
         
     </script>
 </body>
