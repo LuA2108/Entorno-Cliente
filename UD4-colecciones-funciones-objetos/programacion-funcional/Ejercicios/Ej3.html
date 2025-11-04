@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <!-- Objetivo: mostrar una persona que sea igual su edad la introducida por el usuario, ademas de la media de todos. -->
+    <!-- Objetivo: mostrar una persona que sea igual su edad la introducida por el usuario, 
+    ademas de la media de todos. -->
     <script>
         const personas = [{ name: "María", age: 20 },
                         { name: "Bernardo", age: 28 },
@@ -43,8 +44,10 @@
             suma_edades += personas[i].age;
         }
 
-        let persona_encontrada = (posicion !== -1) ? "La primera persona de acuerdo a la edad ingresada es: " + "Nombre: " + 
-                                personas[posicion].name + " - Edad: " + personas[posicion].age: "No hay ninguna persona encontrada segun la edad ingresada.";
+        let persona_encontrada = (posicion !== -1) ? 
+                                "La primera persona de acuerdo a la edad ingresada es: " + "Nombre: " + 
+                                personas[posicion].name + " - Edad: " + personas[posicion].age: 
+                                "No hay ninguna persona encontrada segun la edad ingresada.";
 
         console.log(persona_encontrada);
         console.log("La media de todas las personas: "+ (suma_edades/personas.length));
