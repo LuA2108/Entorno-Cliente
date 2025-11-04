@@ -13,8 +13,8 @@
             let dias_m = [];        // Guarda los dias que empiecen con m
             let primer_dia_m = "";  // Guarda el primer dia con m del array
             let pos_primer_m = 0;   // Posicion del primer dia del array con m
-            let hay_dia_s = 0;      // Indica si hay algun dia con s
-            let dias_s = 0;         // Indica si todos los dias acaban con s
+            let hay_dia_s = 0;      // Indica si hay algun dia con s, inicializado en verdadero
+            let dias_s = 1;         // Indica si todos los dias acaban con s
             let dias_mayus = [];    // Guarda los dias en mayusculas
             let es_martes = 0;      // Indica si algun dia es martes
 
@@ -41,22 +41,28 @@
                     hay_dia_s = true;
                 }
 
-                // Comprueba si di
-                if(!dias_semanas[i].includes("s", dias_semanas[i].length-1)) {
-
+                // Como esta inicializado como verdadero, al encontrar un dia que no termine en s, cambia a falso
+                if(!dias_semanas[i].endsWith("s")) {
+                    dias_s = false;
                 }
 
                 /*Guardar todos los dias en mayuscula*/
                 dias_mayus.push(dias_semanas[i].toUpperCase());
 
-
+                //Comprueba si algun dia es martes
+                if(dias_semanas[i] == "martes") {
+                    es_martes = true;
+                }
             }
 
             // Imprime los dias que empiecen con m
             console.log("Dias que empiezan con 'm': "+ dias_m.join(" "));
             console.log("Primer dia de la semana con 'm': "+ primer_dia_m);
             console.log("Posicion del primer dia con m: "+ pos_primer_m);
+            console.log("¿La semana tiene dias con 's'? " + ((hay_dia_s) ? "Verdadero":"Falso"));
+            console.log("¿Todos los dias acaba con 's'? " + ((dias_s) ? "Verdadero":"Falso"));
             console.log("Los dias en mayusculas: "+ dias_mayus.join(" "))
+            console.log("¿Hay martes en semana? "+ ((es_martes) ? "Si":"No"));
 
 
         </script>
