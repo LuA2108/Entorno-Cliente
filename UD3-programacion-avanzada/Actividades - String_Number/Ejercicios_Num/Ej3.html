@@ -1,0 +1,36 @@
+<!-- LUCERO CAHUANA-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            function numeroAlCubo(numero) {
+                let cubo = 1;
+
+                if(isNaN(numero)) {
+                    alert("El numero introducido no es un numero.");
+                    return false;
+                }
+
+                numero = Number(numero);
+
+                if(!Number.isInteger(numero)) {
+                    alert("El numero no es entero. ");
+                    return false;
+                }
+
+                cubo = Math.pow(numero, 3);
+                return cubo;
+            }
+
+            console.log(numeroAlCubo(5));
+            console.log(numeroAlCubo("A"));
+            console.log(numeroAlCubo(5.1));
+        </script>
+    </body>
+</html>

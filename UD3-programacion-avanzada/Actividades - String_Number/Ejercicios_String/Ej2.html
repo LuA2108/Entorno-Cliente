@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+            
+            let cadena = "Hola ovni";
+
+            // 1. Funcion at() : Devuelve un caracter en una posicion especifica, acepta negativos
+            
+            console.log("Funcion at(): ");
+            console.log("Primer caracter: " + cadena.at(0));
+            console.log("Ultimo carater: " + cadena.at(-1));
+
+            // 2. Funcion charAt() : Devuelve el caracter en un indice dado, no acepta negativos
+
+            console.log("Funcion charAt(): ");
+            console.log("Primer caracter: " + cadena.charAt(0));
+            
+            // 3. Funcion concat() : Une dos o mas caracteres y devuelve una cadena
+            let color = "verde";
+
+            console.log("Funcion concat(): ");
+            console.log(cadena.concat( " ", color, " aspero"));
+
+            // 4. Funcion endsWith() : Verifica si la cadena termina con un valor específico.
+
+            console.log("Funcion endsWith(): ");
+            console.log( cadena.endsWith("verde")); // Falso
+            console.log( cadena.endsWith("ovni")); // Verdadero
+
+            // 5. Funcion includes() : Comprueba si la cadena contiene un valor / Sensible a may y min
+
+            console.log("Funcion includes(): ");
+            console.log( cadena.includes("Hola")); // Verdadero
+            console.log( cadena.includes("casa")); // Falso
+
+            // 6. Funcion indexOf() : Devuelve la posición de la primera aparición de un valor.
+
+            console.log("Funcion indexOf(): ");
+            console.log( cadena.indexOf("i"));
+            console.log( cadena.indexOf("v"));
+
+            // 7. Funcion length() : Devuelve la longitud de una cadena
+
+            console.log("Funcion length(): ");
+            console.log( cadena.length);
+
+            // 8. Funcion padEnd() : Rellena la cadena al final hasta una longitud específica.
+
+            console.log("Funcion padEnd(): ");
+            console.log( cadena.padEnd(cadena.length + 1, "."));
+
+            // 9. Funcion repeat() : Repite la cadena N veces.
+
+            console.log("Funcion repeat(): ");
+            console.log( cadena.repeat(3));
+
+            // 10 Funcion substring() : Extrae caracteres entre dos índices.
+
+            console.log("Funcion substring(): ");
+            console.log(cadena.substring(0, 4)); //Hola
+
+        </script>
+    </body>
+</html>

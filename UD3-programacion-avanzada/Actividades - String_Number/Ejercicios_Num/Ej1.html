@@ -1,0 +1,56 @@
+<!-- LUCERO CAHUANA-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        function calcularMedia(notas) {
+            let suma = 0; // Acumula la suma de todas las notas
+            let numero = ""; // Variable para construir cada número carácter por carácter
+            let cantidad = 0; // Contador de cuántas notas se han procesado
+
+            // Recorremos toda la cadena de notas
+            for (let i = 0; i < notas.length; i++) {
+                let caracter = notas.charAt(i); // Tomamos un carácter de la cadena
+
+                if (caracter !== ",") {
+                    // Si no es una coma, añadimos el carácter a la variable 'numero'
+                    numero += caracter
+
+                } else {
+                    // Si es una coma, significa que hemos terminado de leer un número
+                    // Comprobamos que 'numero' sea un número válido y no esté vacío
+                    if (!isNaN(numero) && numero !== "") {
+
+                        suma += parseFloat(numero); // Convertimos a número y sumamos
+                        cantidad++;                 // Contamos esta nota
+                    }
+                    numero = ""; // Se reinicia para el siguient enumero
+                }
+            }   
+            // Al final del bucle, puede quedar un último número después de la última coma
+            if (numero !== "" && !isNaN(numero)) {
+                suma += parseFloat(numero); // Sumamos el último número
+                cantidad++;                 // Contamos esta nota
+            }
+            
+            // Se calcula la media con la suma entre la cantidad de notas
+            media = suma / cantidad;
+            // Devuelve la media
+            return media;
+        }
+
+        // Se llama la funcion y se calcula la media expresada en cadena
+        console.log(calcularMedia("7,8.5,9,6.5")); // 7.75
+        console.log(calcularMedia("0,10,5")); // 5
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!-- LUCERO CAHUANA-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        function pedirNumero() {
+            let valor;
+
+            do {
+                valor = prompt("Introduce un numero: ");
+
+                // Comprueba si el valor introducido NO es un número
+                if (isNaN(valor) || valor.trim() === "") {
+                    alert("Error: Debes introducir un número válido.");
+                }
+
+            } while (isNaN(valor) || valor.trim() === "");
+
+            // Convierte a número (por defecto, prompt devuelve texto)
+            valor = Number(valor);
+
+            alert("Número introducido correctamente: " + valor);
+            return valor;
+        }
+
+        // Llamamos a la función
+        pedirNumero();
+    </script>
+</body>
+
+</html>

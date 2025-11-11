@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            function actividad3(frase) {
+
+                let caracteres = "";
+                let esMayuscula = true; // Verdadero porque la primera letra lo es
+
+                // Recorre la longitud de la frase
+                for (let i = 0; i < frase.length; i++) {
+
+                    // Guarda el caracter segun la posicion de la frase
+                    let caracter = frase.charAt(i);
+                    
+                    // Comprueba si el caracter es un espacio 
+                    if(caracter === " ") {
+
+                        // Guarda el caracter en la nueva frase de caracteres
+                        caracteres += caracter;
+
+                        // Cambia para que el siguiente caracter sea mauscula
+                        esMayuscula = true;
+
+                    // Si es verdadero el caracter cambia a mayuscula y cambia a false
+                    } else if (esMayuscula ) {
+                        caracteres += caracter.toUpperCase();
+                        esMayuscula = false;
+                    
+                    //Controla que las demas letras excepto las primeras sean minusculas
+                    } else {
+                        caracteres += caracter.toLowerCase();
+                    }
+                }
+                // Devuelve la nueva frase reconstruida.
+                return caracteres;
+            }
+            console.log(actividad3("juanan te estas pasando"));
+        </script>
+    </body>
+</html>

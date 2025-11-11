@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+
+            function actividad6(texto) {
+                // Se guarda el nuevo texto sin espacios duplicados
+                let resultado = "";
+                // Controlara el flujo de los espacios en el texto
+                let hayEspacioAnterior = false;
+
+                // Recorre el texto desde el inicio al final
+                for (let i = 0; i < texto.length; i++) {
+                    
+                    // Se obtiene el caracter segun la posicion del bucle
+                    let caracter = texto.charAt(i);
+
+                    // Verifica si no es un espacio el caracter
+                    if(caracter !== " ") {
+                        // Se construye el texto sin espacios
+                        resultado += caracter;
+
+                        // al entrar aqui, ya no hay espacio anterior, por lo que cambia a false
+                        hayEspacioAnterior = false;
+                    
+                    // Comprueba si hay un espacio anterior
+                    } else if(!hayEspacioAnterior) {
+
+                        //Si el caracter actual es un espacio y el anterior no, se añade solo un espacio 
+                        resultado += " ";
+                        //se marca que el ultimo caracter fue un espacio para ignorarlo en la siguiente
+                        hayEspacioAnterior = true;
+                    }
+                }
+
+                return resultado;
+            }
+
+            console.log(actividad6("JavaScript   es     muy  fácil"));
+
+        </script>
+    </body>
+</html>

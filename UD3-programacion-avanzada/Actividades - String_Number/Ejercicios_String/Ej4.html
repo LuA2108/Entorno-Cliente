@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            function actividad4(codigo_producto) {
+                let errores = "";
+                let hayError = false;
+
+                //Obtenemos la posicion del primer guion y ultimo, como separador
+                let primer_guion = codigo_producto.indexOf("-");
+                let ultimo_guion = codigo_producto.lastIndexOf("-");
+
+                // Primer error, si no se inlcuye el separador "-"
+                if(primer_guion == -1 || ultimo_guion == -1) {
+                    errores += "- El separador debe ser \"\\-\".\n";
+                }
+
+                // Se extrae cada parte con substring
+                let tipo = codigo_producto.substring(0, primer_guion);
+                let ambito = codigo_producto.substring(primer_guion + 1, ultimo_guion);
+                let antiguedad = codigo_producto.substring(ultimo_guion +1);
+
+                // ///////////////////////////
+                let tipoCliente = "";
+
+                // Comprueba el tipo de cliente 
+                if(tipo == "CP" ) tipoCliente = "Cliente particular";
+                else if(tipo == "CE") tipoCliente = "Empresa";
+                else errores += "- Tipo de cliente invalido, usar \"CP\" o \"CE\"\n";                
+
+                let tipoAmbito = "";
+                
+                //Comprueba el tipo de ambito
+                switch (Number(ambito)) {
+                    case 10: tipoAmbito = "local"; break;
+                    case 11: tipoAmbito = "autonomico"; break;
+                    case 12: tipoAmbito = "nacional"; break;
+                    case 20: tipoAmbito = "internacional"; break;
+                    default: errores += "- Ambito no valido, usar 11, 12, 13, 20.\n"; break;
+                }
+
+                if(isNaN(Number(antiguedad))) errores += "- La antiguedad debe ser numerica.";
+
+                if(errores) return errores;
+                else return tipoCliente.concat(" ", tipoAmbito, " con ", antiguedad, " años de antiguedad." );
+            }
+
+            console.log(actividad4("CP-12-3"));
+        </script>
+    </body>
+</html>

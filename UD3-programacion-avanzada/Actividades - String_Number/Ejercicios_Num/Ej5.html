@@ -1,0 +1,43 @@
+<!-- LUCERO CAHUANA-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        function sumarDigitos(frase) {
+            let suma = 0;
+            let numero = "";
+
+            // Recorremos la frase carácter por carácter
+            for (let i = 0; i < frase.length; i++) {
+
+                // Se obtiene cada caracter en cada iteracion
+                let caracter = frase.charAt(i);
+
+                // Si es dígito, sumarlo
+                if (!isNaN(caracter) && caracter !== " ") {
+                    suma += parseInt(caracter);
+                }
+            }
+
+            // Si al final quedó un número sin sumar, lo sumamos aquí
+            if (numero !== "") {
+                suma += parseInt(numero);
+            }
+            return suma;
+        }
+
+        // Se llama a la funcion e imprime los ejemplos de uso
+        console.log(sumarDigitos("hola123"));         // ➜ 6 (1 + 2 + 3)
+        console.log(sumarDigitos("Estamos a 2 días del finde y faltan 90 días para fin del año 2025")); // 20  ➜ (2 + 9 + 0 + 2 + 0 + 2 + 5)
+        console.log(sumarDigitos("la casa 9 tiene 3 lolas y 2 peras")); // ➜ 14
+    </script>
+</body>
+
+</html>

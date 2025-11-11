@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        // Funcion de flecha autoejecutable
+        (() => {
+
+            const conversions = [];
+
+            // String to Number //////////////////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve 123, convierte la cadena en enteros
+            conversions.push(Number("123"));
+
+            //Devuelve Nan porque 123abc no se puede onvertir al tener caracteres
+            conversions.push(Number("123abc"));
+
+            //Devuelve 0, al no haber valor se interpreta como 0
+            conversions.push(Number(""));
+
+            //Devuelve 0, ya que tambien ignora los espacios en blanco
+            conversions.push(Number(" "));
+
+            // Boolean to Number ////////////////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve 1, true se interpreta como 1
+            conversions.push(Number(true));
+
+            // Devuelve 0, false se interpreta como 0
+            conversions.push(Number(false));
+
+            // Null and Undefined to Number ////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve 0, null se interpreta como ausencia de valor, osea, 0.
+            conversions.push(Number(null));
+
+            // Devuelve Nan, significa "No es un numero" a pesar de ser tipo Number
+            conversions.push(Number(undefined));
+
+            // String to Boolean //////////////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve false, ya que 0 es false
+            conversions.push(Boolean(""));
+
+            // Se considera True, al tener espacio Boolean no lo ignora a diferencia de Number (trim)
+            conversions.push(Boolean(" "));
+
+            // Devuelve true, porque toda cadena no vacia se considera verdadero al pasar a Boolean
+            conversions.push(Boolean("false"));
+
+            // Number to String //////////////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve la cadena 123
+            conversions.push(String(123));
+
+            // Devuelve una cadena representando 0
+            conversions.push(String(0));
+
+            // Devuelve una cadena NaN
+            conversions.push(String(NaN));
+
+            // Devuelve la cadena Infitity
+            conversions.push(String(Infinity));
+
+            // Boolean to String /////////////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve true
+            conversions.push(String(true));
+
+            // Devuelve false
+            conversions.push(String(false));
+
+            // Null and Undefined to String /////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve null como cadena 
+            conversions.push(String(null));
+
+            // Devuelve undefined como cadena
+            conversions.push(String(undefined));
+
+            // Number to Boolean ////////////////////////////////////////////////////////////////////////////////////////
+
+            //Devuelve false, al ser 0 un valor falsy
+            conversions.push(Boolean(0));
+
+            // Cualquier numero diferente a 0 es true
+            conversions.push(Boolean(1));
+
+            // Nan se considera tambien false
+            conversions.push(Boolean(NaN));
+
+            // Al no ser 0 ni Nan se considera true
+            conversions.push(Boolean(Infinity));
+
+            // Implicit Coercion in Operations /////////////////////////////////////////////////////////////////////////
+
+            // Devuelve 51 porque concatena y no suma
+            conversions.push("5" + 1);
+
+            // Por el signo - tiene sentido numerico devuelve 4, ya que convierte 5 en numero
+            conversions.push("5" - 1);
+
+            // Convierte 5 a numero, devuelve 10 ya que * tiene sentido numero
+            conversions.push("5" * 2);
+
+            // Convierte 5 a numero por el signo /, resultado 2.5
+            conversions.push("5" / 2);
+
+            // % es aritmetico, por lo que convierte 5 a num y devuelve 1 al ser resto
+            conversions.push("5" % 2);
+
+            // Coercion with == ///////////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve true, al ser los operadores iguales
+            conversions.push(5 == "5");
+
+            // Devuevlve true ya que 0 se convierte a false
+            conversions.push(false == 0);
+
+            // Devuelve true, son una excepcion especial  
+            conversions.push(null == undefined);
+
+            // Devuelve true, ya que el array vacio se convierte "" --> 0 y false pasa a 0
+            // 0 == 0 es true
+            conversions.push([] == false);
+            
+            // Devuelve true, ya que el array vacio pasa de [] -> "" -> 0 y "" -> 0 
+            // 0 == 0 es true
+            conversions.push([] == "");
+
+            // El array devuelve la cadena "1, 2" y al ser igual a la otra cadena devuelve true
+            conversions.push([1, 2] == "1,2");
+
+            // Coercion with === //////////////////////////////////////////////////////////////////////////////////////
+
+            // Devuelve false ya que uno es tipo numerico y otro de tipo cadena a pesar de ser iguales
+            conversions.push(5 === "5");
+
+            // Devuelve false ya que unno es tipo booleano y otro numerico 
+            conversions.push(false === 0);
+
+            // Aqui devuelve false, ya que no hay coercion y son tipos dstintos
+            conversions.push(null === undefined);
+
+            // Devuelve False, al ser el array objeto y false boolean 
+            conversions.push([] === false);
+
+            // Devuelve False, al ser el array un objeto y "" string
+            conversions.push([] === "");
+
+            // Devuelve False, al ser el array un objeto y "1,2" un string
+            conversions.push([1, 2] === "1,2");
+
+            // Imprime la info
+            console.log(conversions);
+        })();
+    </script>   
+</body>
+
+</html>

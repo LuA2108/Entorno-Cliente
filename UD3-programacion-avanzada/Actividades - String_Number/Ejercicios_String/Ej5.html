@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+            function actividad5(palabra1, palabra2) {
+                let palabraNueva = "";
+
+                //Le quitamos espacio y las mayusculas.
+                palabra1 = palabra1.toLowerCase().trim();
+                palabra2 = palabra2.toLowerCase().trim();
+
+                // Esta palabra se va a consumir.
+                palabra2V2 = palabra2;
+
+                //Recorre la longitud de la primera palabra.
+                for (let i = 0; i < palabra1.length; i++) {
+                    // Se obtiene el primer caracter  de la palabra 1
+                    let caracter = palabra1.charAt(i);
+
+                    //Se obtiene la posicion del primer caracter
+                    indice = palabra2V2.indexOf(caracter);
+
+                    // Solo si se encuentra la posicion del caracter continua el flujo
+                    if(indice !== -1) {
+                        //Se añade la letra a la nueva palabra
+                        palabraNueva += caracter;
+
+                        //Se elimina el caracter usado, tomando todo lo anterior y despues del indice, exceptuando la letra usada.
+                        palabra2V2 = palabra2V2.substring(0, indice) + palabra2V2.substring(indice + 1);
+                    }
+                }
+                return palabraNueva;
+            }
+
+            //Se llama a la funcion e imprime la nueva palabra formada.
+            console.log(actividad5("Ciudad", "Cuando"));
+            console.log(actividad5("bac", "abcd"));
+
+        </script>
+    </body>
+</html>

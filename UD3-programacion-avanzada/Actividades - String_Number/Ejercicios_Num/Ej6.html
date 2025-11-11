@@ -1,0 +1,27 @@
+<!-- LUCERO CAHUANA-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        function numAleatorio(min, max) {
+
+            // Se calcula un numero entero aleatorio entre un minimo y un maximo
+            numero = Math.floor(Math.random() * (max - min + 1)) + min;
+            return numero;
+        }
+
+        // Se imprime un numero aleatorio llamando a la funcion numAleatorio
+        console.log(numAleatorio(1, 10)); // puede dar cualquier entero entre 1 y 10
+        console.log(numAleatorio(50, 60)); // puede dar cualquier entero entre 50 y 60
+        console.log(numAleatorio(-5, 5));  // puede dar cualquier entero entre -5 y 5
+    </script>
+</body>
+
+</html>
