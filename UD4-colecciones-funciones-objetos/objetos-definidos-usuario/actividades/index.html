@@ -1,14 +1,169 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <script src="" async defer></script>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        const artistas = [
+            {
+                nombre: "Ana López",
+                solista: true,
+                edad: 30,
+                genero: "pop",
+                discos: [
+                    { titulo: "Disco 1", copiasVendidas: 1500, anioLanzamiento: 2015 },
+                    { titulo: "Disco 2", copiasVendidas: 3000, anioLanzamiento: 2018 }
+                ],
+                ultimoRecital: { pais: "España", entradasVendidas: 5000, costoEntradas: 50 }
+            },
+            {
+                nombre: "Luis Martínez",
+                solista: false,
+                edad: 35,
+                genero: "rock",
+                discos: [
+                    { titulo: "Rock 1", copiasVendidas: 2500, anioLanzamiento: 2010 },
+                    { titulo: "Rock 2", copiasVendidas: 4000, anioLanzamiento: 2012 },
+                    { titulo: "Rock 3", copiasVendidas: 3500, anioLanzamiento: 2015 }
+                ],
+                ultimoRecital: { pais: "México", entradasVendidas: 8000, costoEntradas: 45 }
+            },
+            {
+                nombre: "Marta Pérez",
+                solista: true,
+                edad: 28,
+                genero: "pop",
+                discos: [
+                    { titulo: "Pop 1", copiasVendidas: 1000, anioLanzamiento: 2017 }
+                ],
+                ultimoRecital: { pais: "Argentina", entradasVendidas: 3000, costoEntradas: 60 }
+            }
+        ];
+
+
+
+        function artistasSolistas(listaArtistas) {
+            return listaArtistas.filter(artista => artista.solista === true);
+        }
+
+        console.log(artistasSolistas(artistas));
+
+
+        function artistaMasJoven(listaArtistas) {
+
+            return listaArtistas.reduce((masJoven, artista) =>
+                !masJoven || artista.edad < masJoven.edad ? artista : masJoven, null);
+        }
+
+        function artistasConMasUnDisco(listaArtistas) {
+            return listaArtistas.filter(artista => artista.discos.length > 1).sort((a, b) => b.discos.length > a.discos.length);
+        }
+
+        function artistaMasEntradasVendidas(listaArtistas) {
+            return listaArtistas.reduce((max, artista) =>
+                !max || artista.ultimoRecital.entradasVendidas > max.ultimoRecital.entradasVendidas ? artista : max, null)
+        }
+
+        function totalReacaudacionPorArtista(listaArtistas) {
+            return listaArtistas.map(artista => {
+                const totalCopias = listaArtistas.discos.reduce((sum, disco) => sum + disco.copiasVendidas, 0);
+                const recaudacion = totalCopias * artista.ultimoRecital.costoEntradas;
+                return { nombre: artista.nombre, recaudacion }
+            });
+        }
+
+        function artistasPorGenero(listaArtistas) {
+            return listaArtistas.reduce((acum, artista) => {
+                const genero = artista.genero;
+
+                if (!acum[genero]) {
+                    acum[genero] = [];
+                }
+
+                acum[genero].push(artista.nombre);
+                return acum;
+            }, {});
+        }
+
+        function discosLanzadosPorAñoEspecifico(anio, listaArtistas) {
+            const discos = [];
+
+            listaArtistas.forEach(artista => {
+                artista.discos.forEach(disco => {
+                    if (disco.anioLanzamiento === anio) {
+                        discos.push(disco);
+                    }
+                });
+            });
+
+        }
+
+        const numeros = [5, 12, 8, 130, 44];
+
+        numeros.filter(n => n >= 10);
+
+        const nombres = ["Ana", "Luis", "Carmen"];
+
+        nombres.map(n => n.toUpperCase());
+
+        const notas = [6, 8, 9, 5];
+
+        let suma = notas.reduce((sum, n) => sum + n, 0);
+        promedio = suma / notas.length;
+
+        const productos = [
+            { nombre: "Camiseta", precio: 30 },
+            { nombre: "Pantalón", precio: 60 },
+            { nombre: "Zapatos", precio: 80 }
+        ];
+
+        productos.find(p => p.precio > 50);
+
+        const alumnos = [
+            { nombre: "Ana", nota: 7 },
+            { nombre: "Juan", nota: 4 },
+            { nombre: "Sara", nota: 9 }
+        ];
+
+        const alumnosAprobados = alumnos.reduce((cont, alumno) => (alumno.nota > 5) ? cont + 1 : cont, 0);
+
+        const artistasB = [
+            { nombre: "A", discos: [{ copiasVendidas: 1000 }, { copiasVendidas: 500 }] },
+            { nombre: "B", discos: [{ copiasVendidas: 2000 }] }
+        ];
+
+        const totalCopiasVendidas = artistasB.reduce((acum, artista) => {
+            const totalArtistas = artista.discos.reduce((sum, disco) => sum + disco.copiasVendidas, 0);
+            return acum + totalArtistas;
+        }, 0);
+
+        const discos = [
+            { titulo: "Alpha", anio: 2015 },
+            { titulo: "Beta", anio: 2020 },
+            { titulo: "Gamma", anio: 2018 }
+        ];
+
+        const titulosLanzados2017 = discos.filter(d => d.anio > 2017).map(d => d.titulo);
+
+        const libros = [
+            { titulo: "1984", genero: "Ficción" },
+            { titulo: "Sapiens", genero: "Ensayo" },
+            { titulo: "Dune", genero: "Ficción" }
+        ];
+
+        const categoriaGenero = libros.reduce((acum, libro) => {
+            acum(libro.genero) = (acum[libro.genero] || 0) + 1;
+            return acum;
+        }, {});
+    </script>   
+</body>
+
 </html>
