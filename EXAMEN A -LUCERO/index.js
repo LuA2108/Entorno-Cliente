@@ -24,15 +24,16 @@ while (menu) {
 
         case "4":
             let componentes = prompt("Ingrese una lista de componente de PC (separadas `,`)");
-            let listaComponentes = componentes.slice();
+            componentes = componentes.replace("\"", "");
+            let listaComponentes = componentes.split(",");
 
-
+            console.log(presupuestoPC(listaComponentes, ventas));
         break;
         
         case "5":
-            let vendedorA = prompt("Ingrese el nombre del vendedor: ");
+            let vendedore = prompt("Ingrese el nombre del vendedor: ");
 
-            console.log(ventasTotalesVendedore(ventas, vendedorA));
+            console.log(ventasTotalesVendedore(ventas, vendedore));
         break;
         
         case "6":
