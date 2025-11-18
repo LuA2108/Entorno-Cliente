@@ -3,13 +3,13 @@ function artistasSolistas(listaArtistas) {
             return listaArtistas.filter(artista => artista.solista === true);
         }
 
-        console.log(artistasSolistas(artistas));
+        //console.log(artistasSolistas(artistas));
 
         function artistaSegunEdad(edad, listaArtistas) {
             return listaArtistas.filter(artista => artista.edad === edad);
         }
 
-        console.log(artistaSegunEdad(20, artistas));
+        //console.log(artistaSegunEdad(20, artistas));
 
         function artistaPorInstrumento(listaArtistas) {
             return listaArtistas.reduce((acum, artista) => {
@@ -18,7 +18,7 @@ function artistasSolistas(listaArtistas) {
             }, {});
         }
 
-        console.log(artistaPorInstrumento(artistas));
+        //console.log(artistaPorInstrumento(artistas));
 
         function artistaPorGenero(listaArtistas) {
             return listaArtistas.reduce((acum, artista) => {
@@ -27,13 +27,13 @@ function artistasSolistas(listaArtistas) {
             }, {});
         }
 
-        console.log(artistaPorGenero(artistas));
+        //console.log(artistaPorGenero(artistas));
 
         function artistasMasDiscosQue(num, listaArtistas) {
             return listaArtistas.filter(artista => artista.discos.length > num).sort((a, b) => b.discos.length - a.discos.length);
         }
 
-        console.log(artistasMasDiscosQue(8, artistas));
+        //console.log(artistasMasDiscosQue(8, artistas));
 
         function artistaMasEntradasVendidas(listaArtistas) {
             return listaArtistas.reduce((max, artista) => {
@@ -47,7 +47,7 @@ function artistasSolistas(listaArtistas) {
             }, null);
         }
 
-        console.log(artistaMasEntradasVendidas(artistas));
+        //console.log(artistaMasEntradasVendidas(artistas));
 
         function artistaMayorRecaudacion(listaArtistas) {
             return listaArtistas.reduce((max, artista) => {
@@ -61,13 +61,13 @@ function artistasSolistas(listaArtistas) {
             }, null);
         }
 
-        console.log(artistaMayorRecaudacion(artistas));
+        //console.log(artistaMayorRecaudacion(artistas));
 
         function artistaConDiscoEspecificoAño(listaArtistas, anyo) {
             return listaArtistas.filter(artista => (artista.ultimoRecital && artista.ultimoRecital.anio === anyo));
         }
 
-        console.log(artistaConDiscoEspecificoAño(artistas, 2019));
+        //console.log(artistaConDiscoEspecificoAño(artistas, 2019));
 
         function artistaConMasCopiasVendidas(listaArtistas) {
             return listaArtistas.reduce((max, artista) => {
@@ -81,4 +81,4 @@ function artistasSolistas(listaArtistas) {
             }, null);
         }
 
-        console.log(artistaConMasCopiasVendidas(artistas));
+        //console.log(artistaConMasCopiasVendidas(artistas));
