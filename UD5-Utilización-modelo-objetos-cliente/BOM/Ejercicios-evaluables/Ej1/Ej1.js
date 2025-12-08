@@ -2,8 +2,6 @@ let url = "https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage
 const win = window.open(url, "linkedin", 
             "width=500, height=200, top=100, left=200");
 
-
-
 console.log("---- Datos Generales----");
 console.log(win.location.href);
 console.log(win.name);

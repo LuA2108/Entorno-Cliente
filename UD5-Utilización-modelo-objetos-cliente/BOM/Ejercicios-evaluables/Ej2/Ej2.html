@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        let porcentaje = parseInt(prompt("Ingrese el porcentaje para redimensionar la pantalla: "));
+
+        if (porcentaje <= 0 || isNaN(porcentaje)) {
+            console.log("El valor ingresado no es valido. ");
+
+        } else {
+
+            let confirmacion = confirm("¿Quiere continuar?");
+
+            if (confirmacion) {
+                console.log("El usario acepto.");
+
+                const win = window.open("/Ej2.html", "miVentana", "resizable=yes");
+
+                win.onload = function () {
+
+                    console.log("---- Antes ---- ");
+                    console.log("Altura: " + win.innerHeight + " | Ancho: " + win.innerWidth);
+
+                    let alto = win.innerHeight * (porcentaje / 100);
+                    let ancho = win.innerWidth * (porcentaje / 100);
+
+                    win.resizeTo(ancho, alto);
+
+                    console.log("---- Despues ---- ");
+                    console.log("Altura: " + win.innerHeight + " | Ancho: " + win.innerWidth);
+                };
+
+            } else {
+                console.log("El usuario no acepto");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
