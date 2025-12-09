@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 4</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p id="raw">Pantalla, Batería, Cámara</p>
+    <ul id="lista"></ul>
+
+    <script>
+        //Obtener texto <p>
+        let texto = document.getElementById("raw").textContent;
+        
+        //Obtener la lista
+        let lista = document.getElementById('lista');
+
+        //Separar elementos por ','
+        let objetos = texto.split(',');
+
+        //Recorrer cada elemento y anardir <li>
+        for (let i = 0; i < objetos.length; i++) {
+            
+            lista.innerHTML +=`<li>${objetos[i]}</li>`;
+        }
+
+    </script>
+</body>
+
+</html>
