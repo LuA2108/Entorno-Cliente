@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 4</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p id="origen">Pequeño,Mediano,Grande</p>
+    <select id="tallas"></select>
+
+    <script>
+        //Obtener texto de <p>
+        let texto = document.getElementById('origen').textContent;
+
+        //Obtener diferentes sizes
+        let tamaños = texto.split(',');
+
+        //Insertar tallas en select
+        for (let i = 0; i < tamaños.length; i++) {
+            document.getElementById('tallas').innerHTML += `<option value='${tamaños[i]}'>${tamaños[i]}</option>`;            
+        }
+
+    </script>
+</body>
+
+</html>
