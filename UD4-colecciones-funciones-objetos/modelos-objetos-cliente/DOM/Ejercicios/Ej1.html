@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 1</title>
+    <meta name="autor" content="Lucero Anay Cahuana Cornejo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <input id="nombre" value="Carlos">
+    <h2 id="saludo"></h2>
+    
+    <script>
+        let nombre = document.getElementById("nombre").value;
+        
+        //Mostrar en consola
+        console.log(`Bienvenido, ${nombre}`);
+
+        //Mostrar en html
+        document.getElementById('saludo').innerHTML = `Bienvenido, ${nombre}`;
+        
+    </script>
+</body>
+
+</html>
