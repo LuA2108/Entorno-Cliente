@@ -15,18 +15,17 @@
     <ul id="lista"></ul>
 
     <script>
-        //Obtener texto <p>
+        // 1. Obtener contendo del nodo raw
         let texto = document.getElementById("raw").textContent;
         
-        //Obtener la lista
+        // 2. Obtener el nodo lista
         let lista = document.getElementById('lista');
 
-        //Separar elementos por ','
+        // 3. Obtener una lista de raw mediante split
         let objetos = texto.split(',');
 
-        //Recorrer cada elemento y anardir <li>
+        // 4. Recorrer cada elemento y añadirlo al nodo lista
         for (let i = 0; i < objetos.length; i++) {
-            
             lista.innerHTML +=`<li>${objetos[i]}</li>`;
         }
 

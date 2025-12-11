@@ -15,13 +15,13 @@
     <select id="tallas"></select>
 
     <script>
-        //Obtener texto de <p>
+        // 1. Obtener contenido de <p>>
         let texto = document.getElementById('origen').textContent;
 
-        //Obtener diferentes sizes
+        // 2. Obtener lista de tallas mediante split
         let tamaños = texto.split(',');
 
-        //Insertar tallas en select
+        // 3. Implementar las tallas en <select>
         for (let i = 0; i < tamaños.length; i++) {
             document.getElementById('tallas').innerHTML += `<option value='${tamaños[i]}'>${tamaños[i]}</option>`;            
         }

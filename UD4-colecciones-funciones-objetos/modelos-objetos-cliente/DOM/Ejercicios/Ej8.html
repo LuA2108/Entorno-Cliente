@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 4</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div id="pasos">
+        <p>Encender</p>
+        <p>Configurar</p>
+        <p>Finalizar</p>
+    </div>
+    <ol id="listaPasos"></ol>
+
+    <script>
+        // 1. Obtener nodo de pasos
+        let texto = document.getElementById('pasos');
+        
+        // 2. Obtener los elementos hijos de 'pasos'
+        let pasos = texto.children;
+
+        // 3. Obtener el nodo lista de pasos.
+        let listaPasos = document.getElementById('listaPasos');
+
+        // 4. Recorrer los elementos de pasos
+        for (let i = 0; i < pasos.length; i++) {
+            // 5. Implementar progresivamente los pasos en la lista
+            listaPasos.innerHTML += `<li>${pasos[i].textContent}</li>`;
+        }
+
+    </script>
+</body>
+
+</html>

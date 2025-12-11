@@ -14,12 +14,13 @@
     <h2 id="saludo"></h2>
     
     <script>
+        // 1. Obtener el valor del nodo 'nombre' / input
         let nombre = document.getElementById("nombre").value;
         
-        //Mostrar en consola
+        // 2. Mostrar en consola
         console.log(`Bienvenido, ${nombre}`);
 
-        //Mostrar en html
+        // 3. Insertar el valor de nodo nombre al elemento saludo
         document.getElementById('saludo').innerHTML = `Bienvenido, ${nombre}`;
         
     </script>

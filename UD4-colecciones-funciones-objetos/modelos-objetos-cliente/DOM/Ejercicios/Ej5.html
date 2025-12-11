@@ -15,15 +15,16 @@
     <p id="precioFinal"></p>
 
     <script>
-        //Obtener el texto del precio
+        // 1. Obtener el nodo de precioBruto
         let precioBruto = document.getElementById('precioBruto').textContent;
 
-        //Obtener posicion del precio
-        let indice = precioBruto.indexOf('es ')+3; //posicon despues de 'es '
-        //Extraer precio y convertir entero
+        // 2. Obtener posicion del precio
+        let indice = precioBruto.indexOf('es ')+3; // posicon despues de 'es '
+
+        //3. Extraer precio y convertir a entero
         let precio = parseInt(precioBruto.substring(indice));
 
-        //Html
+        // 4. Implementar en precioFinal el precio obtenido de precioBruto
         document.getElementById('precioFinal').textContent = `${precio} €`;
     </script>
 </body>

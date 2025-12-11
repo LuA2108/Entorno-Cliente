@@ -19,14 +19,20 @@
     <p id="resumen"></p>
 
     <script>
+        // 1. Obtener nodo del elemento 'u'
         let div = document.getElementById('u');
 
+        // 2. Obtener los elementos hijos de 'u'
         let pElem = div.children;
 
+        // 3. Obtener nodo resumen
         let resumen = document.getElementById('resumen');
-
+        
+        // 4. Recorrer los elementos hijos
         for (let i = 0; i < pElem.length; i++) {
 
+            // 5. Agregar los elementos hijos al nodo resumen
+            // Mientras no sea el ultimo se agrega ' | ' al final
             if (i !== pElem.length - 1) {
                 resumen.innerHTML += `${pElem[i].textContent} | `;
             } else {
