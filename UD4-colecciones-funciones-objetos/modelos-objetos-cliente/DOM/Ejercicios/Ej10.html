@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 10</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-        <script></script>
-    </body>
+<body>
+    <p id="marca">ACME</p>
+    <p id="modelo">TurboMax</p>
+    <h1 id="titulo"></h1>
+
+    <script>
+        // 1. Obtener el nodo <p>
+        let marca = document.getElementById("marca");
+
+        // 2. Obtener el nodo modelo <p>
+        let modelo = document.getElementById("modelo");
+
+        // 3. Obtener nodo de titulo <h1>
+        let tituloProducto = document.getElementById("titulo");
+
+        tituloProducto.textContent = `${marca.textContent} ${modelo.textContent}`;
+
+    </script>
+</body>
+
 </html>
