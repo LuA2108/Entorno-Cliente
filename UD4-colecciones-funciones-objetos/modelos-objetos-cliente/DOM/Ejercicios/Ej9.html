@@ -9,7 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
 
-    <script defer>
+    
+</head>
+
+<body>
+    <textarea id="editor"><b>Negrita</b> y normal</textarea>
+    <div id="vista"></div>
+    
+    <script>
         // 1. Obtener el nodo <textarea>
         let textarea = document.getElementById('editor');
 
@@ -20,12 +27,6 @@
         vista.innerHTML = textarea.value;
 
     </script>
-</head>
-
-<body>
-    <textarea id="editor"><b>Negrita</b> y normal</textarea>
-    <div id="vista"></div>
-    
 </body>
 
 </html>

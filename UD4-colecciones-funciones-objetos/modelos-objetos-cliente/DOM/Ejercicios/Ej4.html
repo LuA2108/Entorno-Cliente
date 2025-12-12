@@ -7,7 +7,13 @@
     <title>Ejercicio 4</title>
     <meta name="autor" content="Lucero Cahuana">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script defer>
+</head>
+
+<body>
+    <p id="raw">Pantalla, Batería, Cámara</p>
+    <ul id="lista"></ul>
+
+    <script>
         // 1. Obtener contendo del nodo raw
         let texto = document.getElementById("raw").textContent;
         
@@ -22,12 +28,6 @@
             lista.innerHTML +=`<li>${objetos[i]}</li>`;
         }
     </script>
-
-</head>
-
-<body>
-    <p id="raw">Pantalla, Batería, Cámara</p>
-    <ul id="lista"></ul>
 </body>
 
 </html>

@@ -7,7 +7,12 @@
     <title>Ejercicio 1</title>
     <meta name="autor" content="Lucero Anay Cahuana Cornejo">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+</head>
+
+<body>
+    <input id="nombre" value="Carlos">
+    <h2 id="saludo"></h2>
+
     <script>
         // 1. Obtener el valor del nodo 'nombre' / input
         let nombre = document.getElementById("nombre").value;
@@ -18,11 +23,6 @@
         // 3. Insertar el valor de nodo nombre al elemento saludo
         document.getElementById('saludo').innerHTML = `Bienvenido, ${nombre}`;
     </script>
-</head>
-
-<body>
-    <input id="nombre" value="Carlos">
-    <h2 id="saludo"></h2>
 </body>
 
 </html>

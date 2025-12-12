@@ -8,8 +8,13 @@
     <meta name="autor" content="Lucero Cahuana">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
+</head>
 
-    <script defer>
+<body>
+    <p id="precioBruto">El precio final es 199</p>
+    <p id="precioFinal"></p>
+
+    <script>
         // 1. Obtener el nodo de precioBruto
         let precioBruto = document.getElementById('precioBruto').textContent;
 
@@ -22,11 +27,6 @@
         // 4. Implementar en precioFinal el precio obtenido de precioBruto
         document.getElementById('precioFinal').textContent = `${precio} €`;
     </script>
-</head>
-
-<body>
-    <p id="precioBruto">El precio final es 199</p>
-    <p id="precioFinal"></p>
 </body>
 
 </html>
