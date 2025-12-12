@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 11</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <input id="usuario" value="">
+    <p id="error"></p>
+
+    <script>
+        // 1. Obtener el usuario <input>
+        let entrada = document.getElementById("usuario").value;
+
+        // 2. Obtener el nodo error <p>
+        let mensaje = document.getElementById("error");
+
+        // 3. Se comprueba si esta vacio la entrada con trim()
+        if(!entrada.trim()) {
+            mensaje.innerHTML = `El usuario está vacío.`;
+        } else {
+            mensaje.innerHTML = `El usuario es ${entrada}`;
+        }
+
+    </script>
+</body>
+
+</html>
