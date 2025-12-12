@@ -15,14 +15,14 @@
     <div id="vista"></div>
 
     <script>
-        // 1. Obtener elementos <textarea>
-        let texto = document.getElementById('editor').value;
+        // 1. Obtener el nodo <textarea>
+        let textarea = document.getElementById('editor');
 
-        // 2. Obtener los 
-        let elemEditor = texto.children;
+        // 2. Obtener el nodo vista <div>
+        let vista = document.getElementById("vista");
 
-
-
+        // 3. Muestra el contenido de <textarea> interpretado como HTML
+        vista.innerHTML = textarea.value;
 
     </script>
 </body>
