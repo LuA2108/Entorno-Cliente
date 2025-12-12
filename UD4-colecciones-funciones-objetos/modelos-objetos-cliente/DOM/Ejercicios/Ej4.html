@@ -7,14 +7,7 @@
     <title>Ejercicio 4</title>
     <meta name="autor" content="Lucero Cahuana">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-</head>
-
-<body>
-    <p id="raw">Pantalla, Batería, Cámara</p>
-    <ul id="lista"></ul>
-
-    <script>
+    <script defer>
         // 1. Obtener contendo del nodo raw
         let texto = document.getElementById("raw").textContent;
         
@@ -28,8 +21,13 @@
         for (let i = 0; i < objetos.length; i++) {
             lista.innerHTML +=`<li>${objetos[i]}</li>`;
         }
-
     </script>
+
+</head>
+
+<body>
+    <p id="raw">Pantalla, Batería, Cámara</p>
+    <ul id="lista"></ul>
 </body>
 
 </html>
