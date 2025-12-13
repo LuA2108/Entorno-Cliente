@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 12</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <table id="t">
+        <tr><td>Nombre</td><td>LuWis</td></tr>
+        <tr><td>Edad</td><td>30</td></tr>
+    </table>
+    <textarea id="salida"></textarea>
+
+
+    <script>
+        // 1. Obtener nodo tabla <table>
+        let tabla = document.getElementById("t");
+
+        // 2. Obtener Nodo salida: <textarea>
+        let salida = document.getElementById("salida");
+
+        // 3. Obtiene del <tbody> -> <tr>
+        let filas = tabla.firstElementChild.children;
+        
+        // 4. Recorre las filas y se obtiene las celdas hijas -> <td>
+        for (let i = 0; i < filas.length; i++) {
+        let celdas = filas[i].children;
+            
+        // 5. Inicializamos una variable para guardar los datos de la celda
+        let filaTexto = "";
+
+        // 6. Recorre las celdas
+        for (let j = 0; j < celdas.length; j++) {
+
+            // 7. Almacena los datos progresivamente
+            filaTexto += celdas[j].textContent;
+
+            // 8. Separador solo si no es la ultima celda
+            if(j < celdas.length -1) filaTexto += ": "; // Separador solo entre celdas
+        }
+
+        // 7 Concatenar las filas en el <textarea> de salida.
+        salida.value += filaTexto + "\n";
+        // 7.1 Mostrar en consola
+        console.log("Celda 0:", JSON.stringify(filaTexto),);
+    }
+    
+    </script>
+</body>
+
+</html>
