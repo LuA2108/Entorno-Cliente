@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 14</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="enlaces">
+        <p>Inicio</p>
+        <p>Servicios</p>
+        <p>Contacto</p>
+    </div>
+    <ul id="menu"></ul>
+
+    <script>
+        // 1. Obtener los hijos del nodo enlaces <div>
+        let enlaces = document.getElementById("enlaces").children;
+            
+        // 2. Obtener el nodo menu <ul> para la lista
+        let menu = document.getElementById("menu");
+
+        // 3. Recorre los enlaces
+        for (let i = 0; i < enlaces.length; i++) {
+            // 4. Insertar progresivamente los enlaces a menu
+            menu.innerHTML += `<li>${enlaces[i].textContent}</li>`;
+        }
+    </script>
+</body>
+
+</html>
