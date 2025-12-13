@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 17</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    
+    <div id="curso">
+        <p>Módulo 1: 20h</p>
+        <p>Módulo 2: 30h</p>
+    </div>
+    <p id="total"></p>
+
+    <script>
+        // 1. Obtenre los elementos hijos de curso
+        let cursos = document.getElementById("curso").children;
+
+        // 2. Obtener nodo de total
+        let total = document.getElementById("total");
+
+        // 3. Valor para guardar la suma
+        let suma = 0;
+
+        // 4. Recorre los elementos hijos de curso <p>
+        for (let i = 0; i < cursos.length; i++) {
+            // 5. Se obtiene cada curso por iteracion
+            let curso = `${cursos[i].textContent}`;
+
+            // 6. Se obtiene la posicion despues de :
+            let indice = curso.indexOf(":") + 1;
+            // 7. Se convierte en entero y se suma progresivamente
+            suma += parseInt(curso.substring(indice));
+        }
+
+        // 8. Se asigna la suma a total <p>
+        total.textContent = "Total: "+suma+ "h";
+    </script>
+</body>
+
+</html>
