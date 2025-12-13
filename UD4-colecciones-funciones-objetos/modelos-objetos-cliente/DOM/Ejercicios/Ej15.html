@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 15</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <p id="texto">Esto es un ejemplo interesante de análisis</p>
+    <p id="resultado"></p>
+
+    <script>
+        // 1. Obtener el contenido del nodo texto <p>
+        let texto = document.getElementById("texto").textContent;
+
+        // 2. Obtener el nodo resultado <p>
+        let reusltado = document.getElementById("resultado");
+
+        // 3. Obtener las palabra de texto como una lista
+        let palabras = texto.split(" ");
+
+        // 4. Se inicializa la palabra mas larga como el primero
+        let palabraLarga = palabras[0];
+
+        // 5. Recorre la lista de palabras
+        for (let i = 0; i < palabras.length; i++) {
+            console.log(palabras[i]);
+
+            // 6. Guarda la palabra mas larga
+            if(palabraLarga.length < palabras[i].length) {
+                palabraLarga = palabras[i];
+            }
+        }
+
+        // 7. Se asigna en palabras la palabra mas larga
+        reusltado.textContent = palabraLarga;
+
+    </script>
+</body>
+
+</html>
