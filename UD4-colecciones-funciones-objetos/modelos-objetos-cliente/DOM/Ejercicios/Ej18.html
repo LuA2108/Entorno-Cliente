@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 17</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div id="comentarios">
+        <p>Bien explicado</p>
+        <p>Podría ser mejor</p>
+        <p>Excelente clase</p>
+    </div>
+    <ul id="mostrar"></ul>
+
+    <script>
+        // 1. Obtener elementos hijos de comentarios <div> -> <p>
+        let comentarios = document.getElementById("comentarios").children;
+
+        // 2. Obtener el nodo mostrar <ul> para la lista
+        let listaMostrar = document.getElementById("mostrar");
+
+        // 3. Recorre los elementos hijos de comentarios y asigna progrsivamente a la lista
+        for (let i = 0; i < comentarios.length; i++) {
+            listaMostrar.innerHTML += `<li>${comentarios[i].textContent}</li>`;
+        }
+    </script>
+</body>
+
+</html>
