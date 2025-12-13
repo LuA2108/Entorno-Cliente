@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 13</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <p id="cat">Tecnología</p>
+    <p id="tit">Nuevo microchip</p>
+    <h2 id="final"></h2>
+
+    <script>
+        // 1. Obtener nodo de cat <p>
+        let tecnologia = document.getElementById("cat");
+
+        // 2. Obtener nodo titulo de <p>
+        let titulo = document.getElementById("tit");
+
+        // 3. Obtener nodo de final <h2>
+        let TituloNoticia = document.getElementById("final");
+
+        // 4. Autocompletar el titulo noticia
+        TituloNoticia.textContent = `[${tecnologia.textContent}] ${titulo.textContent}`;
+
+    </script>
+</body>
+
+</html>
