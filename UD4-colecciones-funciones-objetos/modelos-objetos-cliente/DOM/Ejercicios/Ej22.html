@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 22</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <ul>
+        <li id="producto1">Laptop</li>
+        <li>Lámpara</li>
+        <li>Mouse</li>
+    </ul>
+    <p id="salida"></p>
+
+    <script>
+        // 1 Obtener el elemento siguiente a producto1 -> <li>
+        let productoSig = document.getElementById("producto1").nextElementSibling;
+
+        // 2. Obtener el nodo salida -> <p>.
+        let salida = document.getElementById("salida");
+
+        // 3. Imprimir el elemento siguiente.
+        salida.textContent = "Producto siguiente: " + productoSig.textContent;
+    </script>
+</body>
+
+</html>
