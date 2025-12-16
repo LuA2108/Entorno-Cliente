@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 22</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div id="precios">
+        <p>15</p>
+        <p id="central">25</p>
+        <p>35</p>
+    </div>
+    <p id="salida"></p>
+
+
+    <script>
+        // 1. Obtener elemento central <p>
+        let hermanoCentral = document.getElementById("central");
+
+        // 2. Obtener hermano anterior
+        let hermanoAnterior = parseInt(hermanoCentral.previousElementSibling.textContent);
+
+        // 3. Obtener hermano posterior
+        let hermanoPost = parseInt(hermanoCentral.nextElementSibling.textContent);
+
+        // 4. Obtener el nodo salida -> <p>.
+        let salida = document.getElementById("salida");
+
+        // 5. Sumar los elementos
+        let suma = hermanoAnterior + hermanoPost;
+
+        // 6. Imprimir la suma de los elementos.
+        salida.textContent = "Suma de hermanos: " + suma;
+    </script>
+</body>
+
+</html>
