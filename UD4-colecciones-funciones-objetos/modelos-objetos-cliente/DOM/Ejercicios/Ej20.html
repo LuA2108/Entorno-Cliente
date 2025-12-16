@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 20</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <table id="factura">
+        <tr><td>Artículo A</td><td>10</td></tr>
+        <tr><td>Artículo B</td><td>20</td></tr>
+    </table>
+
+    <div id="resumen"></div>
+    
+    <script>
+        // 1. Obtener los <tr> de la tabla  
+        let filas = document.getElementById("factura").firstElementChild.children;
+            
+        // 2. Obtener el nodo de <div> - resumen
+        let resumen = document.getElementById("resumen");
+
+        // 3. Recorre los elementos hijos de la tabla
+        for (let i = 0; i < filas.length; i++) {
+            //4. Obtiene los elementos hijos de <tr> -> <td>
+            let celdas = filas[i].children;
+            
+            // 5. Recorre los <td> : celdas
+            for (let j = 0; j < celdas.length; j++) {
+                // 6. Se implementa progresivamente las celdas
+                resumen.innerHTML += `${celdas[j].innerHTML}`;
+                // 7. Si es el ultimo no hay separador
+                if(j < celdas.length -1) resumen.innerHTML += ": "; 
+            }
+            // 8. Se agrega la moneda y salto de linea
+            resumen.innerHTML += "€ <br>";
+        }
+    </script>
+</body>
+
+</html>
