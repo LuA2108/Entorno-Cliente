@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 22</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <ul>
+        <li>Tarea 1</li>
+        <li id="tarea2">Tarea 2</li>
+        <li>Tarea 3</li>
+    </ul>
+    <p id="salida"></p>
+
+    <script>
+        // 1 Obtener el elemento anterior a tarea2 -> <li>
+        let productoAnt = document.getElementById("tarea2").previousElementSibling;
+
+        // 2. Obtener el nodo salida -> <p>.
+        let salida = document.getElementById("salida");
+
+        // 3. Imprimir el elemento anterior
+        salida.textContent = "Tarea anterior: " + productoAnt.textContent;
+    </script>
+</body>
+
+</html>
