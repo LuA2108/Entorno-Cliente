@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 22</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div id="comentarios">
+        <p>Buen post</p>
+        <p>Interesante</p>
+        <p>Gracias por compartir</p>
+    </div>
+    <p id="salida"></p>
+
+
+    <script>
+        // 1 Obtener el ultimo elemento de comentarios -> <div> -> <p>
+        let ultimoComentario = document.getElementById("comentarios").lastElementChild;
+
+        // 2. Obtener el nodo salida -> <p>.
+        let salida = document.getElementById("salida");
+
+        // 3. Imprimir el ultimo elemento
+        salida.textContent = "Ultimo post: " + ultimoComentario.textContent;
+    </script>
+</body>
+
+</html>
