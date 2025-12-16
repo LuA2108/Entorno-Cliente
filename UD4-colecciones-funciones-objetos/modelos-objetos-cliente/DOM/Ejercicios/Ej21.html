@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 21</title>
+    <meta name="autor" content="Lucero Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div id="info">
+        <h2>Título del bloque</h2>
+        <p id="detalle">Detalle del contenido</p>
+    </div>
+
+    <p id="salida"></p>
+    
+    <script>
+        // 1 Obtener el primer elemento hijo de <div> -> info
+        let elementoInfo = document.getElementById("info").firstElementChild;
+
+        // 2. Obtener el nodo salida -> <p>.
+        let salida = document.getElementById("salida");
+
+        // 3. Imprimir el titulo de info
+        salida.textContent = "Titulo del bloque: " +elementoInfo.textContent;
+    </script>
+</body>
+
+</html>
