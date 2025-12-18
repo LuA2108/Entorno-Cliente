@@ -5,7 +5,8 @@ let sectionUsers = document.getElementById("usuarios");
 let listUsers = sectionUsers.children[1];
 
 // 3. Recorre los elementos hijos de <ul> -> lista
-for (let i = 0; i < listUsers.children.length; i++) {
+// Es mas seguro si se recorre de atras hacia adelante
+for (let i = listUsers.children.length -1; i >= 0 ; i--) {
     // 4. Se obtiene cada item de usuarios
     let li = listUsers.children[i]
 
