@@ -1,7 +1,9 @@
 let link = "www.linkedin.com/in/lucero-cahuana";
 
 //Abrir nueva ventana, segun caracteristicas: anchoXalto
-let w = window.open("https://www.linkedin.com/in/lucero-cahuana/", "Linkedin", "width=500, height=200");
+let w = window.open("https://www.linkedin.com/in/lucero-cahuana/", 
+                    "Linkedin", 
+                    "width=500, height=200");
 
 //Ubicacion de la pagina actual
 let urlActual = location.href;
