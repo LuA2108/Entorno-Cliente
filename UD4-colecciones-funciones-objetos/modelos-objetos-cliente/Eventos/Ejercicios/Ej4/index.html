@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 4</title>
+    <meta name="autor" content="Lucero Anay Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+    <script>
+        // Se ejecuta cunado el DOM esta listo
+        window.addEventListener('DOMContentLoaded', () => {
+            // Obtenemos el elemento cuadro para mayor facilidad
+            const cuadro = document.getElementById("cuadro");
+
+            // Evento que se aplica al pasar por encima del elemento
+            cuadro.addEventListener('mouseenter', () => {
+                // Se cambia el color a rojo al mouse a entrar
+                cuadro.style.backgroundColor = "red";
+            });
+
+            // Evento que se aplica al salir del elemento 
+            cuadro.addEventListener('mouseleave', () => {
+                // Se cambia al color blanco al mouse salir
+                cuadro.style.backgroundColor = "white";
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+    <div style="display: block; width: 100px; height: 100px;" id="cuadro">
+        Cuadro que cambia al entrar el ratón
+    </div>
+
+</body>
+
+</html>
