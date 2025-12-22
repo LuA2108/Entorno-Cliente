@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ejercicio 2</title>
-        <meta name="autor" content="Lucero Anay Cahuana">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!-- Se aplica el evento "mouseover", dispara cuando el mouse entra al elemento -->
-        <div onmouseover="color()" style="background-color: aqua; padding: 10px;">Pasa por aqui</div>
-        
-        <!-- Segundo elemento donde tendra el efecto real de evento -->
-        <div id="efecto" style="background-color: rgb(180, 212, 183); padding: 10px;">Efectos del movimiento</div>
-    </body>
-    <script>
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 2</title>
+    <meta name="autor" content="Lucero Anay Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!-- Se aplica el evento "mouseover", dispara cuando el mouse entra al elemento -->
+    <div onmouseover="color()" style="background-color: aqua; padding: 10px;">Pasa por aqui</div>
+
+    <!-- Segundo elemento donde tendra el efecto real de evento -->
+    <div id="efecto" style="background-color: rgb(180, 212, 183); padding: 10px;">Efectos del movimiento</div>
+
+    <script defer>
         function color() {
-        // Se obtiene el elemento efecto 
-        let efecto = document.getElementById("efecto");
-        
-        // Se accede al estilo del elemento para cambiar el color
-        efecto.style.backgroundColor = "green";
+            // Se obtiene el elemento efecto 
+            let efecto = document.getElementById("efecto");
+
+            // Se accede al estilo del elemento para cambiar el color
+            efecto.style.backgroundColor = "green";
         }
     </script>
+</body>
+
 </html>
