@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 5</title>
+    <meta name="autor" content="Lucero Anay Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .boton {
+            display: block;
+            width: 100px;
+            cursor: pointer;
+            margin: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="boton1" class="boton">Pulsar aquí</div>
+    <div id="boton2" class="boton">Pulsar aquí</div>
+
+    <script defer>
+        // Nos devuelve todos los elementos con clase boton
+        let botones = document.querySelectorAll(".boton");
+
+        botones.forEach(boton => {
+            boton.addEventListener("click", (event) =>{
+                alert("Boton presionado: "+ event.target.id);
+            });
+        });
+    </script>
+</body>
+
+</html>
