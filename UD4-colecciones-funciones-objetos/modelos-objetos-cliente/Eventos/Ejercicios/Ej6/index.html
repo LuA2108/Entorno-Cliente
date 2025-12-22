@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 6</title>
+    <meta name="autor" content="Lucero Anay Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div><label>Coordenada X</label>
+    <input id="cX"></div>
+    <div><label>Coordenada Y</label>
+    <input id="cY"></div>
+
+    <script defer>
+        // Obtener las entradas para las coordenadas
+        let x = document.getElementById("cX");
+        let y = document.getElementById("cY");
+
+        // La funcion asigna a las entradas la funcion page que da las coordenadas del mouse
+        function posicion(e) {
+            x.value = e.pageX;
+            y.value = e.pageY;
+        }
+
+        // Se dispara cada que se mueve el raton y llama a la funcion
+        document.addEventListener("mousemove", posicion);
+    </script>
+</body>
+</html>
