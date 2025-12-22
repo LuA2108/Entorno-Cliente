@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 7</title>
+    <meta name="autor" content="Lucero Anay Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="c1" style="background: red"></div>
+    <div id="c2" style="background: white"></div>
+    <div id="c3" style="background: blue"></div>
+    
+    <script defer>
+        // Se obtiene el elemento centra de los bloques
+        let c2 = document.getElementById("c2");
+
+        // La funcion recibe como argumento el obj evento
+        function arrastrar(evento) {
+            // Se obtiene el origen con relatedTarget, apunta al elemento que se producjo el evento
+            let origen = evento.relatedTarget;
+
+            // Se comprueba el id del elemento origen
+            if(origen.id === "c1") {
+                // Cambia el elemento central por el color c1 (elemento)
+                c2.style.backgroundColor = origen.style.backgroundColor;
+            } else if (origen.id === "c3") {
+                // Cambia el elemento central por el color c3 (elemento)
+                c2.style.backgroundColor = origen.style.backgroundColor;
+            } else {
+                // De cualquier direccion cambia al color blanco
+                c2.style.backgroundColor = "white";
+            }
+        }
+
+        // Manejador de evento al bloque central
+        // Cada vez que el raton entra en c2, se llama a la funcion arrastrar
+        c2.addEventListener("mouseenter", arrastrar);
+    
+    </script>
+</body>
+
+</html>
