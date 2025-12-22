@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 3</title>
+    <meta name="autor" content="Lucero Anay Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <form>
+        <input id="precio" type="number">
+        <input id="cantidad" type="number">
+        <input type="button" id="enviar" value="Calcular">
+        <input id="total" readonly>
+    </form>
+
+    <script defer>
+        // Se obtiene los elementos total y boton
+        const total = document.getElementById("total");
+        const boton = document.getElementById("enviar");
+
+        // La funcion calcula el precio total segun el valor de las entradas
+        function calcular() {
+            // Se obtiene el valor de las entrada precio y cantidad
+            let precio = document.getElementById("precio").value;
+            let cantidad = document.getElementById("cantidad").value;
+
+            // Se multiplica ambos valores
+            let precioFinal = parseFloat(precio) * parseFloat(cantidad);
+
+            // Se le asigna a la entrada total el valor final
+            total.value = precioFinal.toFixed(2);
+        }
+
+        // Se vincula el evento al boton
+        boton.addEventListener("click", calcular);
+
+    </script>
+</body>
+
+</html>
