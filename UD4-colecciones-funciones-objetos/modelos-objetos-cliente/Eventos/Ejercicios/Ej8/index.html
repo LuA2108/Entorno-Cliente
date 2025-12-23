@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio 8</title>
+    <meta name="autor" content="Lucero Anay Cahuana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <form>
+        <label>No se aceptan dígitos</label>
+        <input type="text" id="letras">
+    </form>
+
+    <script defer>
+        // Se obtiene la entrada 
+        const entrada = document.getElementById("letras");
+
+        // La funcion comprueba si la entrada es un numero
+        function hayNumeros(e) {
+            // Se imprime por consola la tecla presionada
+            console.log("Tecla presionada: ", e.key);
+
+            // Se comprueba si la tecla es un numero 0-9
+            if (parseInt(e.key) >= 0 && parseInt(e.key) <= 9) {
+                // Al ser un numero imprime un mensaje de alerta
+                alert("No se ingresan numeros");
+                // Interrumpe el flujo, no dejando ingresar numeros a la entrada
+                e.preventDefault();
+            }
+        }
+
+        // El evento que se activa en la entrada del formulario
+        // Al presionar una tecla, llama a la funcion que comprueba si se ingreso un numero
+        entrada.addEventListener("keydown", hayNumeros);
+    </script>
+</body>
+
+</html>
