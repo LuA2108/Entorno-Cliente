@@ -1,0 +1,31 @@
+.form-control.activo ~ .error {
+    color: red;
+}
+
+.form-control ~ .error {
+    display: none;
+
+}
+
+#errores.activo {
+    box-shadow: 0 0 5px 1px red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#errores {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
