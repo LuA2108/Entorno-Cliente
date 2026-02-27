@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS bd_ventas_peliculas;
+USE bd_ventas_peliculas;
+
+-- USUARIO
+DROP TABLE IF EXISTS usuario;
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    email VARCHAR(50) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- PELICULA
+DROP TABLE IF EXISTS pelicula;
+CREATE TABLE pelicula (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    disponible BOOLEAN DEFAULT TRUE
+);
+
+-- PEDIDO
+DROP TABLE IF EXISTS pedido;
+CREATE TABLE pedido (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    estado ENUM('pendiente','pagado','cancelado') DEFAULT 'pendiente',
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+);
+
+-- DETALLE_PEDIDO
+DROP TABLE IF EXISTS detalle_pedido;
+CREATE TABLE detalle_pedido (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pedido_id INT NOT NULL,
+    pelicula_id INT NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (pedido_id) REFERENCES pedido(id) ON DELETE CASCADE,
+    FOREIGN KEY (pelicula_id) REFERENCES pelicula(id)
+);
+
+-- INSERTS de ejemplo
+INSERT INTO usuario (nombre, email, contrasena) VALUES
+('Juan Pérez','juan@example.com','juan'),
+('Ana López','ana@example.com','ana');
+
+INSERT INTO pelicula (titulo, precio) VALUES
+('Rápido y Furioso', 5.99),
+('La Gran Aventura', 4.99),
+('Laberinto del Fauno', 5.99);
